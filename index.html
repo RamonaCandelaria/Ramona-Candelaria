@@ -108,28 +108,43 @@
     margin:0 0.8rem;
   }
 
+  .cat-label{
+    max-width:1400px;
+    margin:0 auto;
+    padding: 0 6vw 1rem;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--gold);
+  }
+  .gallery + .cat-label{ margin-top:3rem; }
+
   .gallery{
-    columns: 3 220px;
-    column-gap: 4px;
-    padding: 0 4px 2rem;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    padding: 0 6vw 2rem;
     max-width:1400px;
     margin:0 auto;
   }
   .gallery figure{
-    break-inside:avoid;
-    margin:0 0 4px;
+    margin:0;
     position:relative;
     overflow:hidden;
     background:var(--bg-soft);
+    aspect-ratio: 1 / 1;
+    border-radius:2px;
   }
   .gallery img{
     width:100%;
+    height:100%;
+    object-fit:cover;
     display:block;
     filter:saturate(0.92) contrast(1.02);
     transition:transform 0.6s ease, filter 0.6s ease;
   }
   .gallery figure:hover img{
-    transform:scale(1.035);
+    transform:scale(1.06);
     filter:saturate(1) contrast(1.05);
   }
   .gallery figcaption{
@@ -146,7 +161,7 @@
   .gallery figure:hover figcaption{opacity:1;}
 
   @media (max-width:640px){
-    .gallery{columns: 2 140px;}
+    .gallery{grid-template-columns: repeat(2, 1fr); gap:8px; padding:0 4vw 1.5rem;}
   }
 
   .about{
@@ -212,6 +227,7 @@
 
   .reveal{opacity:0; transform:translateY(16px); transition:opacity 0.8s ease, transform 0.8s ease;}
   .reveal.in{opacity:1; transform:none;}
+
   .float-cta{
     position:fixed;
     right:1.4rem;
@@ -259,25 +275,38 @@
 
   <div class="section-label">Trabajos</div>
 
+  <div class="cat-label">Blackwork</div>
   <div class="gallery" id="gallery">
-    <figure class="reveal"><img src="guerrero-espartano.jpg" alt="Guerrero espartano blackwork" loading="lazy"><figcaption>Blackwork · hombro</figcaption></figure>
-    <figure class="reveal"><img src="serpiente-peonias.jpg" alt="Serpiente y peonías" loading="lazy"><figcaption>Blackwork &amp; dotwork · cadera</figcaption></figure>
-    <figure class="reveal"><img src="aguila.jpg" alt="Águila realista" loading="lazy"><figcaption>Blackwork realista · pierna</figcaption></figure>
-    <figure class="reveal"><img src="if-you-want-me.jpg" alt="If you want me, if you need me, I'm yours" loading="lazy"><figcaption>Fine line conceptual · pierna</figcaption></figure>
+    <figure class="reveal"><img src="guerrero-espartano.jpg" alt="Guerrero espartano blackwork" loading="lazy"><figcaption>Blackwork · en proceso</figcaption></figure>
+    <figure class="reveal"><img src="aguila.jpg" alt="Águila realista" loading="lazy"><figcaption>Blackwork · en proceso</figcaption></figure>
     <figure class="reveal"><img src="guerrera-1ra-sesion.jpg" alt="Guerrera nórdica, primera sesión" loading="lazy"><figcaption>Blackwork · en proceso</figcaption></figure>
+    <figure class="reveal"><img src="serpiente-peonias.jpg" alt="Serpiente y peonías" loading="lazy"><figcaption>Blackwork &amp; dotwork · cadera</figcaption></figure>
+    <figure class="reveal"><img src="corona.jpg" alt="Corona" loading="lazy"><figcaption>Blackwork · nuca</figcaption></figure>
+    <figure class="reveal"><img src="libelula.jpg" alt="Libélula" loading="lazy"><figcaption>Blackwork · muñeca</figcaption></figure>
+    <figure class="reveal"><img src="mariposas.jpg" alt="Tres mariposas" loading="lazy"><figcaption>Blackwork · antebrazo</figcaption></figure>
+    <figure class="reveal"><img src="cassette.jpg" alt="Cassette" loading="lazy"><figcaption>Blackwork · brazo</figcaption></figure>
+  </div>
+
+  <div class="cat-label">Fine Line</div>
+  <div class="gallery">
+    <figure class="reveal"><img src="if-you-want-me.jpg" alt="If you want me, if you need me, I'm yours" loading="lazy"><figcaption>Fine line conceptual · pierna</figcaption></figure>
     <figure class="reveal"><img src="cala-fine-line.jpg" alt="Flor cala fine line" loading="lazy"><figcaption>Fine line · brazo</figcaption></figure>
     <figure class="reveal"><img src="rosa-antebrazo.jpg" alt="Rosa línea fina" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
     <figure class="reveal"><img src="journey-geometrico.jpg" alt="Diseño geométrico Journey" loading="lazy"><figcaption>Fine line geométrico · brazo</figcaption></figure>
-    <figure class="reveal"><img src="corona.jpg" alt="Corona" loading="lazy"><figcaption>Blackwork · nuca</figcaption></figure>
     <figure class="reveal"><img src="latido-vino.jpg" alt="Latido con copa de vino" loading="lazy"><figcaption>Fine line conceptual · mano</figcaption></figure>
     <figure class="reveal"><img src="flor-pequena-muneca.jpg" alt="Flor pequeña en muñeca" loading="lazy"><figcaption>Fine line · muñeca</figcaption></figure>
-    <figure class="reveal"><img src="libelula.jpg" alt="Libélula" loading="lazy"><figcaption>Blackwork · muñeca</figcaption></figure>
-    <figure class="reveal"><img src="mariposas.jpg" alt="Tres mariposas" loading="lazy"><figcaption>Blackwork · antebrazo</figcaption></figure>
     <figure class="reveal"><img src="corazon-pequeno.jpg" alt="Corazón lineal" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
-    <figure class="reveal"><img src="cassette.jpg" alt="Cassette" loading="lazy"><figcaption>Blackwork · brazo</figcaption></figure>
+  </div>
+
+  <div class="cat-label">Color</div>
+  <div class="gallery">
     <figure class="reveal"><img src="ala-mariposa-cinta.jpg" alt="Ala de mariposa con cinta rosa" loading="lazy"><figcaption>Color &amp; blackwork · pierna</figcaption></figure>
     <figure class="reveal"><img src="buho-color.jpg" alt="Búho a color" loading="lazy"><figcaption>Color · antebrazo</figcaption></figure>
     <figure class="reveal"><img src="tradicional-color.jpg" alt="Traditional color collage" loading="lazy"><figcaption>Traditional a color</figcaption></figure>
+  </div>
+
+  <div class="cat-label">Lettering</div>
+  <div class="gallery">
     <figure class="reveal"><img src="comfort-zone.jpg" alt="Comfort zone lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
     <figure class="reveal"><img src="cita-espalda.jpg" alt="Cita cursiva en la espalda" loading="lazy"><figcaption>Lettering · espalda</figcaption></figure>
     <figure class="reveal"><img src="amore.jpg" alt="Amore lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
@@ -300,10 +329,12 @@
   </div>
 
   <footer>Madrid · Blackwork &amp; Fine Line</footer>
-<a class="float-cta" href="https://wa.me/34604288023?text=Hola%2C%20he%20visto%20tu%20trabajo%2C%20quiero%20agendar%20una%20cita%20para%20tatuarme" target="_blank" rel="noopener" aria-label="Agendar cita por WhatsApp">
+
+  <a class="float-cta" href="https://wa.me/34604288023?text=Hola%2C%20he%20visto%20tu%20trabajo%2C%20quiero%20agendar%20una%20cita%20para%20tatuarme" target="_blank" rel="noopener" aria-label="Agendar cita por WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.34c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.41a8.16 8.16 0 0 1 2.42 5.8c0 4.52-3.69 8.18-8.24 8.18Zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.14.16-.24.25-.4.08-.16.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.49-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.65 4.2 3.71.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
     Agendar cita
   </a>
+
 <script>
   var els = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
