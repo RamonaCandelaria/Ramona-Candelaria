@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramona Candelaria — Blackwork &amp; Fine Line</title>
+<meta name="description" content="Portfolio de Ramona Candelaria. Tatuajes blackwork y fine line en Madrid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0c0c0b;
+    --bg-soft: #131311;
+    --ink: #ece6d8;
+    --ink-dim: #a89f8c;
+    --gold: #c6a15b;
+    --gold-dim: #8a7647;
+    --line: rgba(198,161,91,0.25);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+
+  .display{font-family:'Cormorant Garamond', serif;}
+
+  /* HERO */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:8vh 6vw;
+    position:relative;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(198,161,91,0.08), transparent 70%),
+      var(--bg);
+  }
+  .crest{
+    width:64px; height:64px;
+    border:1px solid var(--gold-dim);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:2rem;
+    position:relative;
+  }
+  .crest::before{
+    content:'';
+    position:absolute;
+    width:78px; height:78px;
+    border:1px solid var(--line);
+    border-radius:50%;
+  }
+  .crest span{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.6rem;
+    color:var(--gold);
+    font-weight:500;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 8vw, 5rem);
+    font-weight:500;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    line-height:1.05;
+  }
+  .hero .sub{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(1.1rem, 2.2vw, 1.4rem);
+    color:var(--gold);
+    letter-spacing:0.03em;
+    margin-top:0.6rem;
+  }
+  .hero .tagline{
+    margin-top:1.8rem;
+    font-size:0.95rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+  }
+  .hero .divider{
+    width:1px; height:60px;
+    background:linear-gradient(var(--gold-dim), transparent);
+    margin-top:3rem;
+  }
+
+  /* SECTION LABEL */
+  .section-label{
+    text-align:center;
+    font-size:0.8rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    margin: 5rem 0 2.5rem;
+  }
+  .section-label::before, .section-label::after{
+    content:'—';
+    color:var(--gold-dim);
+    margin:0 0.8rem;
+  }
+
+  /* GALLERY */
+  .gallery{
+    columns: 3 220px;
+    column-gap: 4px;
+    padding: 0 4px 2rem;
+    max-width:1400px;
+    margin:0 auto;
+  }
+  .gallery figure{
+    break-inside:avoid;
+    margin:0 0 4px;
+    position:relative;
+    overflow:hidden;
+    background:var(--bg-soft);
+  }
+  .gallery img{
+    width:100%;
+    display:block;
+    filter:saturate(0.92) contrast(1.02);
+    transition:transform 0.6s ease, filter 0.6s ease;
+  }
+  .gallery figure:hover img{
+    transform:scale(1.035);
+    filter:saturate(1) contrast(1.05);
+  }
+  .gallery figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:1.6rem 1rem 0.9rem;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--ink);
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    opacity:0;
+    transition:opacity 0.4s ease;
+  }
+  .gallery figure:hover figcaption{opacity:1;}
+
+  @media (max-width:640px){
+    .gallery{columns: 2 140px;}
+  }
+
+  /* ABOUT STRIP */
+  .about{
+    max-width:640px;
+    margin:6rem auto;
+    text-align:center;
+    padding:0 6vw;
+  }
+  .about p{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(1.2rem, 2.6vw, 1.55rem);
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .about .signature{
+    margin-top:1.4rem;
+    font-family:'Jost', sans-serif;
+    font-size:0.8rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* CONTACT */
+  .contact{
+    text-align:center;
+    padding:5rem 6vw 6rem;
+    border-top:1px solid var(--line);
+    margin-top:4rem;
+  }
+  .contact h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom:2rem;
+  }
+  .contact-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem 2.5rem;
+    margin-bottom:2.5rem;
+  }
+  .contact-links a{
+    text-decoration:none;
+    font-size:0.95rem;
+    letter-spacing:0.04em;
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    padding-bottom:4px;
+    transition:color 0.3s ease, border-color 0.3s ease;
+  }
+  .contact-links a:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+  }
+  footer{
+    text-align:center;
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    color:var(--ink-dim);
+    padding-bottom:2rem;
+  }
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity 0.8s ease, transform 0.8s ease;}
+  .reveal.in{opacity:1; transform:none;}
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="crest"><span>R</span></div>
+    <h1>Ramona Candelaria</h1>
+    <div class="sub">Blackwork &amp; Fine Line</div>
+    <div class="tagline">Tatuajes personalizados · Madrid</div>
+    <div class="divider"></div>
+  </section>
+
+  <div class="section-label">Trabajos</div>
+
+  <div class="gallery" id="gallery">
+    <figure class="reveal"><img src="img/guerrero-espartano.jpg" alt="Guerrero espartano blackwork" loading="lazy"><figcaption>Blackwork · hombro</figcaption></figure>
+    <figure class="reveal"><img src="img/serpiente-peonias.jpg" alt="Serpiente y peonías" loading="lazy"><figcaption>Blackwork &amp; dotwork · cadera</figcaption></figure>
+    <figure class="reveal"><img src="img/aguila.jpg" alt="Águila realista" loading="lazy"><figcaption>Blackwork realista · pierna</figcaption></figure>
+    <figure class="reveal"><img src="img/if-you-want-me.jpg" alt="If you want me, if you need me, I'm yours" loading="lazy"><figcaption>Fine line conceptual · pierna</figcaption></figure>
+    <figure class="reveal"><img src="img/guerrera-1ra-sesion.jpg" alt="Guerrera nórdica, primera sesión" loading="lazy"><figcaption>Blackwork · en proceso</figcaption></figure>
+    <figure class="reveal"><img src="img/cala-fine-line.jpg" alt="Flor cala fine line" loading="lazy"><figcaption>Fine line · brazo</figcaption></figure>
+    <figure class="reveal"><img src="img/rosa-antebrazo.jpg" alt="Rosa línea fina" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
+    <figure class="reveal"><img src="img/journey-geometrico.jpg" alt="Diseño geométrico Journey" loading="lazy"><figcaption>Fine line geométrico · brazo</figcaption></figure>
+    <figure class="reveal"><img src="img/corona.jpg" alt="Corona" loading="lazy"><figcaption>Blackwork · nuca</figcaption></figure>
+    <figure class="reveal"><img src="img/latido-vino.jpg" alt="Latido con copa de vino" loading="lazy"><figcaption>Fine line conceptual · mano</figcaption></figure>
+    <figure class="reveal"><img src="img/flor-pequena-muneca.jpg" alt="Flor pequeña en muñeca" loading="lazy"><figcaption>Fine line · muñeca</figcaption></figure>
+    <figure class="reveal"><img src="img/libelula.jpg" alt="Libélula" loading="lazy"><figcaption>Blackwork · muñeca</figcaption></figure>
+    <figure class="reveal"><img src="img/mariposas.jpg" alt="Tres mariposas" loading="lazy"><figcaption>Blackwork · antebrazo</figcaption></figure>
+    <figure class="reveal"><img src="img/corazon-pequeno.jpg" alt="Corazón lineal" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
+    <figure class="reveal"><img src="img/cassette.jpg" alt="Cassette" loading="lazy"><figcaption>Blackwork · brazo</figcaption></figure>
+    <figure class="reveal"><img src="img/ala-mariposa-cinta.jpg" alt="Ala de mariposa con cinta rosa" loading="lazy"><figcaption>Color &amp; blackwork · pierna</figcaption></figure>
+    <figure class="reveal"><img src="img/buho-color.jpg" alt="Búho a color" loading="lazy"><figcaption>Color · antebrazo</figcaption></figure>
+    <figure class="reveal"><img src="img/tradicional-color.jpg" alt="Traditional color collage" loading="lazy"><figcaption>Traditional a color</figcaption></figure>
+    <figure class="reveal"><img src="img/comfort-zone.jpg" alt="Comfort zone lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
+    <figure class="reveal"><img src="img/cita-espalda.jpg" alt="Cita cursiva en la espalda" loading="lazy"><figcaption>Lettering · espalda</figcaption></figure>
+    <figure class="reveal"><img src="img/amore.jpg" alt="Amore lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
+    <figure class="reveal"><img src="img/numeros-romanos.jpg" alt="Números romanos" loading="lazy"><figcaption>Lettering · costado</figcaption></figure>
+    <figure class="reveal"><img src="img/didazo.jpg" alt="Didazo lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
+  </div>
+
+  <div class="about">
+    <p>Cada línea cuenta una historia. Trabajamos blackwork y fine line con la misma atención al detalle, sesión a sesión, hasta que el diseño es exactamente el tuyo.</p>
+    <div class="signature">Tu idea, mi arte, para siempre</div>
+  </div>
+
+  <div class="contact" id="contacto">
+    <h2>Agenda tu cita</h2>
+    <div class="contact-links">
+      <a href="https://instagram.com/ramonacandelaria" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/34604288023" target="_blank" rel="noopener">WhatsApp · 604 288 023</a>
+      <a href="#gallery">Ver trabajos</a>
+    </div>
+  </div>
+
+  <footer>Madrid · Blackwork &amp; Fine Line</footer>
+
+<script>
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.05});
+    els.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); }, 6000);
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
