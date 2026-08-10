@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ramona Candelaria — Blackwork &amp; Fine Line</title>
 <meta name="description" content="Portfolio de Ramona Candelaria. Tatuajes blackwork y fine line en Madrid.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta property="og:title" content="Ramona Candelaria — Blackwork &amp; Fine Line">
+<meta property="og:description" content="Tatuajes personalizados en Madrid. Blackwork &amp; fine line.">
+<meta property="og:image" content="https://ramonacandelaria.github.io/Ramona-Candelaria/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -118,6 +125,58 @@
     color:var(--gold);
   }
   .gallery + .cat-label{ margin-top:3rem; }
+
+  .see-more{
+    display:block;
+    max-width:1400px;
+    margin:0.5rem auto 3rem;
+    padding:0 6vw;
+    text-align:center;
+  }
+  .see-more button{
+    background:none;
+    border:1px solid var(--line);
+    color:var(--gold);
+    font-family:'Jost', sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    padding:0.7rem 1.6rem;
+    border-radius:999px;
+    cursor:pointer;
+    transition:border-color 0.3s ease, color 0.3s ease;
+  }
+  .see-more button:hover{
+    border-color:var(--gold);
+    color:#e8cf9a;
+  }
+  .gallery-item-hidden{ display:none; }
+
+  .info-strip{
+    max-width:760px;
+    margin:5rem auto 0;
+    padding:0 6vw;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2.5rem;
+    text-align:center;
+  }
+  .info-strip .block h3{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15rem;
+    color:var(--gold);
+    margin-bottom:0.6rem;
+  }
+  .info-strip .block p{
+    font-size:0.9rem;
+    line-height:1.6;
+    color:var(--ink-dim);
+  }
+  @media (max-width:560px){
+    .info-strip{grid-template-columns:1fr; gap:2rem;}
+  }
 
   .gallery{
     display:grid;
@@ -282,10 +341,11 @@
     <figure class="reveal"><img src="guerrera-1ra-sesion.jpg" alt="Guerrera nórdica, primera sesión" loading="lazy"><figcaption>Blackwork · en proceso</figcaption></figure>
     <figure class="reveal"><img src="serpiente-peonias.jpg" alt="Serpiente y peonías" loading="lazy"><figcaption>Blackwork &amp; dotwork · cadera</figcaption></figure>
     <figure class="reveal"><img src="corona.jpg" alt="Corona" loading="lazy"><figcaption>Blackwork · nuca</figcaption></figure>
-    <figure class="reveal"><img src="libelula.jpg" alt="Libélula" loading="lazy"><figcaption>Blackwork · muñeca</figcaption></figure>
-    <figure class="reveal"><img src="mariposas.jpg" alt="Tres mariposas" loading="lazy"><figcaption>Blackwork · antebrazo</figcaption></figure>
-    <figure class="reveal"><img src="cassette.jpg" alt="Cassette" loading="lazy"><figcaption>Blackwork · brazo</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="libelula.jpg" alt="Libélula" loading="lazy"><figcaption>Blackwork · muñeca</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="mariposas.jpg" alt="Tres mariposas" loading="lazy"><figcaption>Blackwork · antebrazo</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="cassette.jpg" alt="Cassette" loading="lazy"><figcaption>Blackwork · brazo</figcaption></figure>
   </div>
+  <div class="see-more"><button type="button" onclick="expandGallery(this)">Ver todo el trabajo</button></div>
 
   <div class="cat-label">Fine Line</div>
   <div class="gallery">
@@ -293,10 +353,11 @@
     <figure class="reveal"><img src="cala-fine-line.jpg" alt="Flor cala fine line" loading="lazy"><figcaption>Fine line · brazo</figcaption></figure>
     <figure class="reveal"><img src="rosa-antebrazo.jpg" alt="Rosa línea fina" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
     <figure class="reveal"><img src="journey-geometrico.jpg" alt="Diseño geométrico Journey" loading="lazy"><figcaption>Fine line geométrico · brazo</figcaption></figure>
-    <figure class="reveal"><img src="latido-vino.jpg" alt="Latido con copa de vino" loading="lazy"><figcaption>Fine line conceptual · mano</figcaption></figure>
-    <figure class="reveal"><img src="flor-pequena-muneca.jpg" alt="Flor pequeña en muñeca" loading="lazy"><figcaption>Fine line · muñeca</figcaption></figure>
-    <figure class="reveal"><img src="corazon-pequeno.jpg" alt="Corazón lineal" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="latido-vino.jpg" alt="Latido con copa de vino" loading="lazy"><figcaption>Fine line conceptual · mano</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="flor-pequena-muneca.jpg" alt="Flor pequeña en muñeca" loading="lazy"><figcaption>Fine line · muñeca</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="corazon-pequeno.jpg" alt="Corazón lineal" loading="lazy"><figcaption>Fine line · antebrazo</figcaption></figure>
   </div>
+  <div class="see-more"><button type="button" onclick="expandGallery(this)">Ver todo el trabajo</button></div>
 
   <div class="cat-label">Color</div>
   <div class="gallery">
@@ -311,12 +372,24 @@
     <figure class="reveal"><img src="cita-espalda.jpg" alt="Cita cursiva en la espalda" loading="lazy"><figcaption>Lettering · espalda</figcaption></figure>
     <figure class="reveal"><img src="amore.jpg" alt="Amore lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
     <figure class="reveal"><img src="numeros-romanos.jpg" alt="Números romanos" loading="lazy"><figcaption>Lettering · costado</figcaption></figure>
-    <figure class="reveal"><img src="didazo.jpg" alt="Didazo lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
+    <figure class="reveal gallery-item-hidden"><img src="didazo.jpg" alt="Didazo lettering" loading="lazy"><figcaption>Lettering · brazo</figcaption></figure>
   </div>
+  <div class="see-more"><button type="button" onclick="expandGallery(this)">Ver todo el trabajo</button></div>
 
   <div class="about">
     <p>Cada línea cuenta una historia. Trabajamos blackwork y fine line con la misma atención al detalle, sesión a sesión, hasta que el diseño es exactamente el tuyo.</p>
     <div class="signature">Tu idea, mi arte, para siempre</div>
+  </div>
+
+  <div class="info-strip">
+    <div class="block">
+      <h3>Precios</h3>
+      <p>Piezas pequeñas desde 60€. Proyectos grandes o de varias sesiones se presupuestan en consulta previa, según diseño y tamaño.</p>
+    </div>
+    <div class="block">
+      <h3>Horario</h3>
+      <p>Lunes a sábado, con cita previa. Escríbenos por WhatsApp o Instagram para agendar tu consulta.</p>
+    </div>
   </div>
 
   <div class="contact" id="contacto">
@@ -336,6 +409,14 @@
   </a>
 
 <script>
+  function expandGallery(btn){
+    var gallery = btn.closest('.see-more').previousElementSibling;
+    gallery.querySelectorAll('.gallery-item-hidden').forEach(function(el){
+      el.classList.remove('gallery-item-hidden');
+      el.classList.add('in');
+    });
+    btn.closest('.see-more').style.display = 'none';
+  }
   var els = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
