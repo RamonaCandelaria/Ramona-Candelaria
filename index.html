@@ -62,7 +62,7 @@
   .display{font-family:'Cormorant Garamond', serif;}
 
   .hero{
-    min-height:100svh;
+    min-height:78svh;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -73,6 +73,28 @@
     background:
       radial-gradient(ellipse 60% 40% at 50% 0%, rgba(198,161,91,0.08), transparent 70%),
       var(--bg);
+    .scroll-cue{
+    margin-top:1.4rem;
+    width:20px; height:32px;
+    border:1px solid var(--gold-dim);
+    border-radius:12px;
+    position:relative;
+  }
+  .scroll-cue::before{
+    content:'';
+    position:absolute;
+    top:6px; left:50%;
+    width:3px; height:6px;
+    margin-left:-1.5px;
+    background:var(--gold);
+    border-radius:2px;
+    animation: scrollDown 1.8s ease infinite;
+  }
+  @keyframes scrollDown{
+    0%{ transform:translateY(0); opacity:1; }
+    70%{ transform:translateY(10px); opacity:0; }
+    100%{ transform:translateY(10px); opacity:0; }
+  }
   }
   .crest{
     width:64px; height:64px;
@@ -379,6 +401,7 @@
     <div class="sub">Blackwork &amp; Fine Line</div>
     <div class="tagline">Tatuajes personalizados · Madrid</div>
     <div class="divider"></div>
+<a href="#gallery" class="scroll-cue" aria-label="Ver trabajos"></a>
   </section>
 
   <div class="section-label">Trabajos</div>
